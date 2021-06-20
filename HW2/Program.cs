@@ -6,13 +6,48 @@ namespace HW2
     {
         public static void Main(string[] args)
         {
+            /*
             Exe1();
             Exe2();
             Exe3();
             Exe4();
             Exe5();
+            */
+            string userChoice;
+            do
+            {
+                Console.WriteLine("Choose an exercise number (1-5)");
+                userChoice = Console.ReadLine();
+                ChooseExe(userChoice);
+            }
+            while (userChoice.ToUpper() != "E");
+
+            Console.WriteLine(" Good Bye...");
         }
-        public static void Exe1()
+        public static void ChooseExe(string choice)
+        {
+            switch (int.Parse(choice))
+            {
+                case 1:
+                    Exe1();
+                    break;
+                case 2:
+                    Exe2();
+                    break;
+                case 3:
+                    Exe3();
+                    break;
+                case 4:
+                    Exe4();
+                    break;
+                case 5:
+                    Exe5();
+                    break;
+                default:
+                    break;
+            }
+        }
+            public static void Exe1()
         {
             string moState = "Missouri State University College of Business";
             Console.WriteLine("Second Word : " + get2ndWord(moState));
