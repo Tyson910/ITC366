@@ -6,12 +6,11 @@ namespace HW2
     {
         public static void Main(string[] args)
         {
-            /*
             Exe1();
             Exe2();
             Exe3();
-            */
             Exe4();
+            Exe5();
         }
         public static void Exe1()
         {
@@ -63,6 +62,17 @@ namespace HW2
             Console.WriteLine("Gross pay is {0}", gross.ToString("C"));
             Console.WriteLine("Withholding is {0}", withholding.ToString("C"));
             Console.WriteLine("Net pay is {0}", net.ToString("C"));
+        }
+        public static void Exe5()
+        {
+            string name, bossName;
+            bool areNamesTheSame;
+            Console.Write("Enter your name >> ");
+            name = Console.ReadLine();
+            Console.Write("Hello {0}! Enter the name of your boss >> ", name);
+            bossName = Console.ReadLine();
+            areNamesTheSame = String.Equals(name, bossName);
+            Console.WriteLine("It is {0} that you are your own boss", areNamesTheSame);
 
         }
     }
