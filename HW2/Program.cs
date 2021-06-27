@@ -44,6 +44,7 @@ namespace HW2
                     Exe5();
                     break;
                 default:
+                    Console.WriteLine(" Good Bye ...");
                     break;
             }
         }
