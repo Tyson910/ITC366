@@ -6,7 +6,7 @@ namespace HW3
     {
         public static void Main(string[] args)
         {
-            Exe1();
+            Exe2();
             /*
              Exe1();
              Exe2();
@@ -74,6 +74,20 @@ namespace HW3
                 Console.WriteLine("The message is okay");
             else
                 Console.WriteLine($"Error!! Message is {userMessage.Length} characters, please enter a message under 140 characters");
+        }
+        public static void Exe2()
+        {
+            Console.WriteLine("Enter a grade point average: ");
+            double GPA = double.Parse( Console.ReadLine() );
+            Console.WriteLine("Enter test score");
+            int testScore = int.Parse( Console.ReadLine() );
+            if (GPA >= 3.0 && testScore >= 60)
+                Console.WriteLine("Accepted ");
+            else if (GPA < 3.0 && testScore >= 80)
+                Console.WriteLine("Accepted");
+            else
+                Console.WriteLine("Rejected");
+                
         }
         public static void Exe4()
         {
