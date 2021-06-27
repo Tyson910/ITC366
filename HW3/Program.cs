@@ -6,7 +6,7 @@ namespace HW3
     {
         public static void Main(string[] args)
         {
-            Exe5();
+            Exe1();
             /*
              Exe1();
              Exe2();
@@ -65,6 +65,15 @@ namespace HW3
                 }
             }
             */
+        }
+        public static void Exe1()
+        {
+            Console.WriteLine("Enter your short message below: ");
+            String userMessage = Console.ReadLine();
+            if (userMessage.Length <= 140)
+                Console.WriteLine("The message is okay");
+            else
+                Console.WriteLine($"Error!! Message is {userMessage.Length} characters, please enter a message under 140 characters");
         }
         public static void Exe4()
         {
