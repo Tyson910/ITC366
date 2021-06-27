@@ -16,13 +16,26 @@ namespace HW2
             string userChoice;
             do
             {
-                Console.WriteLine("Choose an exercise number (1-5)");
+                Console.WriteLine("Choose an exercise number (1-5) or 'e' to exit program");
                 userChoice = Console.ReadLine();
-                ChooseExe(userChoice);
+                try
+                {
+                    ChooseExe(userChoice);
+                }
+                catch
+                {
+                    if (userChoice.ToLower() == "e")
+                    {
+                        Console.WriteLine(" Good bye... ");
+                    }
+                    else
+                    {
+                        Console.WriteLine(" please try again!");
+                    }
+                }
             }
             while (userChoice.ToUpper() != "E");
 
-            Console.WriteLine(" Good Bye...");
         }
         public static void ChooseExe(string choice)
         {
@@ -44,7 +57,7 @@ namespace HW2
                     Exe5();
                     break;
                 default:
-                    Console.WriteLine(" Good Bye ...");
+                    Console.WriteLine(" Not a number between 1-5 ");
                     break;
             }
         }
