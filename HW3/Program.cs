@@ -6,7 +6,7 @@ namespace HW3
     {
         public static void Main(string[] args)
         {
-            Exe2();
+            Exe3();
             /*
              Exe1();
              Exe2();
@@ -69,7 +69,7 @@ namespace HW3
         public static void Exe1()
         {
             Console.WriteLine("Enter your short message below: ");
-            String userMessage = Console.ReadLine();
+            string userMessage = Console.ReadLine();
             if (userMessage.Length <= 140)
                 Console.WriteLine("The message is okay");
             else
@@ -88,6 +88,40 @@ namespace HW3
             else
                 Console.WriteLine("Rejected");
                 
+        }
+
+        public static void Exe3()
+        {
+            Console.WriteLine("Enter r (Rock), p (Paper), or s (Scissors) ");
+            string userPick = Console.ReadLine().ToLower();
+            string cpuPick = cpuPickGenerator();
+
+            Console.WriteLine($"Computer picked {cpuPick} ");
+            
+            if ((userPick == "p" && cpuPick == "rock") || (userPick == "s" && cpuPick == "paper") || (userPick == "r" && cpuPick == "scissors"))
+                Console.WriteLine("You Win");
+            else if (userPick == cpuPick[0].ToString() )
+            {
+                Console.WriteLine("Draw! Rematch!");
+                Exe3();
+            }
+            else
+                Console.WriteLine("Computer Wins");
+        }
+        public static string cpuPickGenerator()
+        {
+            Random randIntGenerator = new Random();
+            int randomInt = randIntGenerator.Next(0, 2);
+            switch (randomInt)
+            {
+                case 0:
+                    return "paper";
+                case 1:
+                    return "rock";
+                default:
+                    return "scissors";
+
+            }
         }
         public static void Exe4()
         {
