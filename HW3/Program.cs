@@ -6,15 +6,6 @@ namespace HW3
     {
         public static void Main(string[] args)
         {
-            Exe3();
-            /*
-             Exe1();
-             Exe2();
-             Exe3();
-             Exe4();
-             Exe5();
-             */
-            /*
             string userChoice;
             do
             {
@@ -38,8 +29,7 @@ namespace HW3
             }
             while (userChoice.ToUpper() != "E");
         }
-            */
-            /*
+            
             public static void ChooseExe(string choice)
             {
                 switch (int.Parse(choice))
@@ -64,8 +54,7 @@ namespace HW3
                         break;
                 }
             }
-            */
-        }
+
         public static void Exe1()
         {
             Console.WriteLine("Enter your short message below: ");
