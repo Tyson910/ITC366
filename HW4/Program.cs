@@ -6,7 +6,7 @@ namespace HW4
     {
         public static void Main(string[] args)
         {
-            Exe2();
+            Exe3();
         }
 
         public static void Exe1()
@@ -26,7 +26,7 @@ namespace HW4
 
         public static void Exe2()
         {
-            Console.WriteLine("Enter a phrase >> ");
+            Console.WriteLine("Enter a phrase below ");
             string userPhrase = Console.ReadLine();
             Console.WriteLine($"There are {countVerbs(userPhrase)} vowels in {userPhrase}");
         }
@@ -41,6 +41,18 @@ namespace HW4
                         vowelsInString++;
 
             return vowelsInString;
+        }
+
+        public static void Exe3()
+        {
+            int sum = 0;
+            for (int i = 0; i <= 200; i++)
+            {
+                if (i == 100)
+                    Console.WriteLine($"Halfway through... after {i} numbers, sum is {sum}");
+                sum += i;
+            }
+            Console.WriteLine($"The sum of the integers 1 through 200 is {sum}");
         }
     }
 }
