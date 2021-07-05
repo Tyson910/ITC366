@@ -8,7 +8,7 @@ namespace HW5
     {
         public static void Main(string[] args)
         {
-            Exe2();
+            Exe3();
         }
 
         public static void Exe1()
@@ -109,5 +109,31 @@ namespace HW5
                     Console.Write($"{tempList[i]} ");
         }
 
+        public static void Exe3()
+        {
+            int numOfNights;
+            double nightlyRate, totalCost;
+            const double ONE_OR_TWO_NIGHTS = 200.00;
+            const double THREE_OR_FOUR_NIGHTS = 180.00;
+            const double FIVE_SIX_OR_SEVEN_NIGHTS = 160.00;
+            const double OVER_EIGHT_NIGHTS = 145.00;
+           
+            Console.Write("How many nights is your stay? ");
+            numOfNights  = int.Parse( Console.ReadLine() );
+
+            if (numOfNights <= 2 && numOfNights > 0)
+                nightlyRate = ONE_OR_TWO_NIGHTS;
+            else if (numOfNights <= 4)
+                nightlyRate = THREE_OR_FOUR_NIGHTS;
+            else if (numOfNights <= 7)
+                nightlyRate = FIVE_SIX_OR_SEVEN_NIGHTS;
+            else
+                nightlyRate = OVER_EIGHT_NIGHTS;
+
+            totalCost = nightlyRate * numOfNights;
+
+            Console.WriteLine($"Price per night is {nightlyRate.ToString("C")}");
+            Console.WriteLine($"Total for {numOfNights} night(s) is {totalCost.ToString("C")}");
+        }
     }
 }
