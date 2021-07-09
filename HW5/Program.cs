@@ -8,7 +8,7 @@ namespace HW5
     {
         public static void Main(string[] args)
         {
-            Exe4();
+            Exe5();
         }
 
         public static void Exe1()
@@ -153,6 +153,40 @@ namespace HW5
             average = total / numbers.Length;
 
             Console.WriteLine($"The average is {average:0.##}");
+
+        }
+
+        public static void Exe5()
+        {
+            const int QUIT = 999;
+            List<int> numbers = new List<int>();
+            int x;
+            int num;
+            double average;
+            double total = 0;
+            string inString;
+
+            Console.Write("Please enter a number or " + QUIT + " to quit...");
+            inString = Console.ReadLine();
+            num = int.Parse(inString);
+            x = 0;
+            while ( num != QUIT)
+            {
+                numbers.Add(num);
+                total += numbers[x];
+                x++;
+                Console.Write("Please enter a number or " +
+                    QUIT + " to quit...");
+                inString = Console.ReadLine();
+                num = Convert.ToInt32(inString);
+            }
+
+            Console.WriteLine("The numbers are:");
+            for (int y = 0; y < numbers.Count; y++)
+                Console.Write($"  {numbers[y]}  ");
+            average = total / numbers.Count;
+            Console.WriteLine();
+            Console.WriteLine("The average is {0}", average);
 
         }
     }
