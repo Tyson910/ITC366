@@ -8,7 +8,7 @@ namespace HW5
     {
         public static void Main(string[] args)
         {
-            Exe3();
+            Exe4();
         }
 
         public static void Exe1()
@@ -134,6 +134,26 @@ namespace HW5
 
             Console.WriteLine($"Price per night is {nightlyRate.ToString("C")}");
             Console.WriteLine($"Total for {numOfNights} night(s) is {totalCost.ToString("C")}");
+        }
+
+        public static void Exe4()
+        {
+            int[] numbers = { 12, 15, 22, 88 };
+            double average;
+            double total = 0;
+
+            Console.Write("\nThe numbers are...");
+            for (int x = 0; x < numbers.Length; x++)
+                Console.Write($" {numbers[x]} ");
+            Console.WriteLine();
+            for (int x = 0; x < numbers.Length; x++)
+            {
+                total += numbers[x];
+            }
+            average = total / numbers.Length;
+
+            Console.WriteLine($"The average is {average:0.##}");
+
         }
     }
 }
