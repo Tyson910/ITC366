@@ -54,16 +54,18 @@ namespace HW4
         public static void Exe1()
         {
             char userInput;
+            bool inputIsUpper;
             do
             {
                 Console.WriteLine("Enter an uppercase letter or ! to quit ");
                 userInput = char.Parse(Console.ReadLine());
-                if (Char.IsUpper(userInput))
+                inputIsUpper = Char.IsUpper(userInput);
+                if (inputIsUpper)
                     Console.WriteLine("Congrats! This is an uppercase letter");
                 else
                     Console.WriteLine("Sorry - that was not an uppercase letter. ");
             }
-            while (userInput != '!');
+            while (userInput != '!' && !inputIsUpper);
         }
 
         public static void Exe2()
@@ -107,21 +109,21 @@ namespace HW4
             string stockNum;
 
             Console.Write("Please enter the stock number of the item you want ");
-            stockNum = Console.ReadLine();
-            while (stockNum != ITEM209 && stockNum != ITEM312 && stockNum != ITEM414)
+            stockNum = Console.ReadLine().Trim();
+            while (!String.Equals(stockNum, ITEM209) && !String.Equals(stockNum, ITEM312) && !String.Equals(stockNum, ITEM414))
             {
                 Console.WriteLine($" {stockNum} is an invalid stock number. Please enter again. ");
                 stockNum = Console.ReadLine();
             }
 
-            if (stockNum == ITEM209)
+            if (String.Equals(stockNum, ITEM209))
                 price = PRICE209;
-            else if (stockNum == ITEM312)
+            else if (String.Equals(stockNum, ITEM312))
                 price = PRICE312;
             else
                 price = PRICE414;
 
-            Console.WriteLine("The price for item # {0} is {1}}", stockNum, price.ToString("C"));
+            Console.WriteLine("The price for item # {0} is {1}", stockNum, price.ToString("C"));
         }
 
         public static void Exe5()
