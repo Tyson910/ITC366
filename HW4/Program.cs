@@ -157,7 +157,7 @@ namespace HW4
             else
                 Console.WriteLine("Your guess was correct.");
 
-            Console.WriteLine("It takes {0} days to reach {1}",
+            Console.WriteLine("It takes {0} days to reach {1} ",
                count, LIMIT.ToString("C"));
             Console.WriteLine("when you double {0} every day",
                START.ToString("C"));
