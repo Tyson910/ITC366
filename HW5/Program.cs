@@ -231,7 +231,7 @@ namespace HW5
                 Console.Write($"  {numbers[y]}  ");
             average = total / numbers.Count;
             Console.WriteLine();
-            Console.WriteLine("The average is {0}", average);
+            Console.WriteLine("The average is {0:0.#}", average);
 
         }
     }
