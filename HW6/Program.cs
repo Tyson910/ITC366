@@ -6,7 +6,7 @@ namespace HW6
     {
         public static void Main(string[] args)
         {
-            Exe4();
+            Exe5();
         }
 
         public static void Exe1()
@@ -57,8 +57,7 @@ namespace HW6
             int flatTip = 5;
         
             DisplayMealCost(mealPrice, percentTip);
-            Console.WriteLine("");
-            Console.WriteLine("");
+            Console.WriteLine("\n\n");
             DisplayMealCost(mealPrice, flatTip);
         }
         public static void DisplayMealCost(double mealPrice, double tip)
@@ -89,12 +88,34 @@ namespace HW6
             SwapInts(ref firstInt, ref lastInt);
             Console.WriteLine($"The numbers are {firstInt}, {middleInt}, {lastInt}");
         }
-
         public static void SwapInts(ref int int1, ref int int2)
         {
             int tempInt = int1;
             int1 = int2;
             int2 = tempInt;
         }
+
+        public static void Exe5()
+        {
+            FancyDisplay(33);
+            FancyDisplay(44, '@');
+            FancyDisplay(55.55);
+            FancyDisplay(77.77, '*');
+            FancyDisplay("hello");
+            FancyDisplay("goodbye", '#');
+        }
+        private static void FancyDisplay(int num, char decoration = 'X')
+        {
+            Console.WriteLine("{0}{0}{0}  {1}  {0}{0}{0}\n", decoration, num);
+        }
+        private static void FancyDisplay(double num, char decoration = 'X')
+        {
+            Console.WriteLine("{0}{0}{0}  {1}  {0}{0}{0}\n", decoration, num.ToString("C"));
+        }
+        private static void FancyDisplay(string word, char decoration = 'X')
+        {
+            Console.WriteLine("{0}{0}{0}  {1}  {0}{0}{0}\n", decoration, word);
+        }
+
     }
 }
