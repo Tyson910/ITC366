@@ -6,7 +6,53 @@ namespace HW6
     {
         public static void Main(string[] args)
         {
-            Exe5();
+            string userChoice;
+            do
+            {
+                Console.WriteLine("Choose an exercise number (1-5) or 'e' to exit program");
+                userChoice = Console.ReadLine();
+                try
+                {
+                    ChooseExe(userChoice);
+                }
+                catch
+                {
+                    if (userChoice.ToLower() == "e")
+                    {
+                        Console.WriteLine(" Good bye... ");
+                    }
+                    else
+                    {
+                        Console.WriteLine(" please try again!");
+                    }
+                }
+            }
+            while (userChoice.ToUpper() != "E");
+        }
+
+        public static void ChooseExe(string choice)
+        {
+            switch (int.Parse(choice))
+            {
+                case 1:
+                    Exe1();
+                    break;
+                case 2:
+                    Exe2();
+                    break;
+                case 3:
+                    Exe3();
+                    break;
+                case 4:
+                    Exe4();
+                    break;
+                case 5:
+                    Exe5();
+                    break;
+                default:
+                    Console.WriteLine(" Not a number between 1-5 ");
+                    break;
+            }
         }
 
         public static void Exe1()
