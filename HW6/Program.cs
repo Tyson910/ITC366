@@ -6,7 +6,7 @@ namespace HW6
     {
         public static void Main(string[] args)
         {
-            Exe2();
+            Exe3();
         }
 
         public static void Exe1()
@@ -48,6 +48,36 @@ namespace HW6
 
             totalFineStr = totalFine.ToString("C");
             Console.WriteLine($"The fine for {numOfBooks} book(s) for {numOfDays} is {totalFineStr}");
+        }
+
+        public static void Exe3()
+        {
+            double mealPrice = 30.00;
+            double percentTip = .20;
+            int flatTip = 5;
+        
+            DisplayMealCost(mealPrice, percentTip);
+            Console.WriteLine("");
+            Console.WriteLine("");
+            DisplayMealCost(mealPrice, flatTip);
+        }
+        public static void DisplayMealCost(double mealPrice, double tip)
+        {
+            double total;
+            double tipInDollars = mealPrice * tip;
+            total = mealPrice + tipInDollars;
+            Console.WriteLine($"Meal Price: {mealPrice.ToString("C")}. Tip percent: {tip:0.00} ");
+            Console.Write($"Tip in dollars: {tipInDollars.ToString("C")} ");
+            Console.WriteLine($"Total bill {total.ToString("C")}");
+        }
+        public static void DisplayMealCost(double mealPrice, int tip)
+        {
+            double total;
+            double tipInPercentage = tip / mealPrice;
+            total = mealPrice + tip;
+            Console.WriteLine($"Meal Price: {mealPrice.ToString("C")}. Tip percent: {tipInPercentage:0.00} ");
+            Console.Write($"Tip in dollars: {tip.ToString("C")} ");
+            Console.Write($"Total bill {total.ToString("C")}");
         }
     }
 }
