@@ -6,7 +6,7 @@ namespace HW6
     {
         public static void Main(string[] args)
         {
-            Exe3();
+            Exe4();
         }
 
         public static void Exe1()
@@ -78,6 +78,23 @@ namespace HW6
             Console.WriteLine($"Meal Price: {mealPrice.ToString("C")}. Tip percent: {tipInPercentage:0.00} ");
             Console.Write($"Tip in dollars: {tip.ToString("C")} ");
             Console.Write($"Total bill {total.ToString("C")}");
+        }
+
+        public static void Exe4()
+        {
+            int firstInt = 23;
+            int middleInt = 45;
+            int lastInt = 67;
+            Console.WriteLine($"The numbers are {firstInt}, {middleInt}, {lastInt}");
+            SwapInts(ref firstInt, ref lastInt);
+            Console.WriteLine($"The numbers are {firstInt}, {middleInt}, {lastInt}");
+        }
+
+        public static void SwapInts(ref int int1, ref int int2)
+        {
+            int tempInt = int1;
+            int1 = int2;
+            int2 = tempInt;
         }
     }
 }
