@@ -81,11 +81,11 @@ namespace HW6
             const float OVERDUE_ADDITIONAL_FEE = .20f;
             float totalFine = 0.0f;
             string totalFineStr;
-            int i = 0;
+            int i = 1;
 
-            while (i < numOfDays)
+            while (i <= numOfDays)
             {
-                if (i >= 7)
+                if (i <= 7)
                     totalFine += OVERDUE_FEE * numOfBooks * 1.0f;
                 else
                     totalFine += OVERDUE_ADDITIONAL_FEE * numOfBooks * 1.0f;
@@ -93,7 +93,7 @@ namespace HW6
             }
 
             totalFineStr = totalFine.ToString("C");
-            Console.WriteLine($"The fine for {numOfBooks} book(s) for {numOfDays} is {totalFineStr}");
+            Console.WriteLine($"The fine for {numOfBooks} book(s) for {numOfDays} days is {totalFineStr}");
         }
 
         public static void Exe3()
@@ -103,7 +103,6 @@ namespace HW6
             int flatTip = 5;
         
             DisplayMealCost(mealPrice, percentTip);
-            Console.WriteLine("\n\n");
             DisplayMealCost(mealPrice, flatTip);
         }
         public static void DisplayMealCost(double mealPrice, double tip)
@@ -113,7 +112,7 @@ namespace HW6
             total = mealPrice + tipInDollars;
             Console.WriteLine($"Meal Price: {mealPrice.ToString("C")}. Tip percent: {tip:0.00} ");
             Console.Write($"Tip in dollars: {tipInDollars.ToString("C")} ");
-            Console.WriteLine($"Total bill {total.ToString("C")}");
+            Console.WriteLine($"Total bill {total.ToString("C")} \n");
         }
         public static void DisplayMealCost(double mealPrice, int tip)
         {
@@ -122,7 +121,7 @@ namespace HW6
             total = mealPrice + tip;
             Console.WriteLine($"Meal Price: {mealPrice.ToString("C")}. Tip percent: {tipInPercentage:0.00} ");
             Console.Write($"Tip in dollars: {tip.ToString("C")} ");
-            Console.Write($"Total bill {total.ToString("C")}");
+            Console.Write($"Total bill {total.ToString("C")} \n");
         }
 
         public static void Exe4()
