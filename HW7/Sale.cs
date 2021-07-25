@@ -36,6 +36,7 @@ namespace HW7
         private double calcMarginalTaxRate(double amount)
         {
             double firstMargin, secondMargin, totalTax;
+            //current tax structure is to charge 8% for the first $100, then 6% for every dollar greater than $100
             firstMargin = 100 * .08 ;
             secondMargin = (amount - 100) * .06;
             totalTax = firstMargin + secondMargin;
