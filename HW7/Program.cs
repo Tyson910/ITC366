@@ -6,7 +6,20 @@ namespace HW7
     {
         public static void Main(string[] args)
         {
-            Exe2();
+            Exe1();
+        }
+
+        private static void Exe1()
+        {
+            SalesTransaction s1 = new SalesTransaction("Abbott", 2000, 0.20);
+            SalesTransaction s2 = new SalesTransaction("Bender", 4000);
+            SalesTransaction s3 = new SalesTransaction("Carter");
+            SalesTransaction sTotal = s1 + s2 + s3;
+            s1.Display();
+            s2.Display();
+            s3.Display();
+            Console.Write($"Total sales: ");
+            sTotal.DisplaySales(); 
         }
 
         private static void Exe2()
