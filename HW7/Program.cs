@@ -6,7 +6,26 @@ namespace HW7
     {
         public static void Main(string[] args)
         {
-            Exe5();
+            Exe3();
+        }
+
+        private static void Exe3()
+        {
+
+            const int SALES_COUNT = 2;
+            Sale[] sales = new Sale[SALES_COUNT];
+            for (int i = 0; i < sales.Length; i++)
+            {
+                sales[i] = new Sale(); 
+                Console.Write($"Enter inventory number #{i} >> ");
+                sales[i].InventoryNum = int.Parse( Console.ReadLine() );
+                Console.Write($"Enter amount of sale >>");
+                sales[i].SaleAmount = double.Parse( Console.ReadLine() );                
+            }
+
+            for (int i = 0; i < sales.Length; i++)
+                Console.WriteLine(sales[i].ToString());
+
         }
 
         private static void Exe4()
